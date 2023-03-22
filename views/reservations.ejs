@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reservations</title>
+    </head>
+    <body>
+        <h1>All Reservations</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Guest Name</th>
+                <th>Guest Email</th>
+                <th>Room</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Total Price</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% reservations.forEach(reservation => { %>
+                <tr>
+                <td><%= reservation.guestName %></td>
+                <td><%= reservation.guestEmail %></td>
+                <td><%= reservation.room %></td>
+                <td><%= reservation.checkIn.toLocaleDateString() %></td>
+                <td><%= reservation.checkOut.toLocaleDateString() %></td>
+                <td><%= reservation.totalPrice %></td>
+                <td><%= reservation.status %></td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>      
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<%- include('partials/header') %>
+  <!-- views/rooms/index.ejs -->
+<div class="room-container">
+  <h1>Rooms and suites</h1>
+  <div class="room">
+    <% rooms.forEach((room) => { %>
+      <div class="room-type">
+        <p>           
+          <img class="rt" src="<%= room.imgUrl %>" />
+            <p><%= room.roomType %></p>
+            <p class="price">&#8358; <%= room.price %></p>
+            <button>
+              RESERVE
+            </button>
+        </p>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<form action="/rooms" id="uploadForm" method="POST" enctype="multipart/form-data">
+  <label for="roomType">Room Type:</label>
+  <input type="text" name="roomType" required>
+  <br>
+  
+  <label for="price">Price:</label>
+  <input type="number" name="price" required>
+  <br>
+  
+  <label for="imgUrl">Image:</label>
+  <input type="file" name="imgUrl" required>
+  <br>
+
+  <label for="availability">Availability:</label>
+  <input type="checkbox" name="availability" value="false">
+  <br>
+  
+  <button type="submit">Create Room</button>
+</form> 
+<script>
+  const form = document.getElementById('uploadForm');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    fetch('/rooms', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.imgUrl);
+      // do something with the imgUrl, such as display the uploaded image
+    })
+    .catch(error => console.error(error));
+  });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.11.0/cloudinary-core-shrinkwrap.min.js"></script>
+<%- include('partials/footer') %>

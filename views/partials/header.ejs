@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hotel Booking</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div class="top-header">
+                <div class="head-container">
+                    <ul class="list">
+                        <li>
+                            <a href="/restaurant">Restaurant</a>
+                        </li>
+                        <li>
+                            <img class= "phone" src="https://s3.amazonaws.com/freestock-prod/450/freestock_573793672.jpg">
+                            <a href="tel.08115938437">0811 593 8437</a>
+                        </li>
+                        <li>
+                            <a href="tel.08108981842">0810 898 1842</a>
+                        </li>
+                        <% if (!user) { %>
+                            <li class="login-signin">
+                                <a href="/login" id="login-btn">Log in</a>
+                            </li>
+                          <% } else { %>
+                            <li><a href="/profile">Profile</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                            <li>Welcome <%= user.username %></li>
+                          <% } %>
+                        <li class="login-signin">
+                    </ul>
+                </div>
+            </div>
+        </header> 
+        <nav class="navbar" id="nav-bar">
+            <div class="image">
+                <img class="logo" src="data:image/png;base64,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" alt=logo />
+            </div>
+            <ul class="list2">
+                <li class="listItem">
+                    <a href="/">Home                                
+                    </a>
+                </li>               
+                <li class="listItem">
+                    <a href="/rooms">Room & Suites                                
+                    </a>
+                </li>
+                <li class="listItem">
+                    <a href="#about">Services                                
+                    </a>
+                </li>
+                <li class="listItem">
+                    <a href="#footer">Contact Us                              
+                    </a>
+                </li>
+            </ul>
+        </nav>

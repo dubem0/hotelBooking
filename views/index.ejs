@@ -1,0 +1,72 @@
+<%- include('partials/header') %>
+        <section id="hero-section">
+            <div class="hero">
+                <div class="hero-desc">
+                    <div class="overlay">
+                        <h2 class="">Dee's Hotel <br><span class="hmsg">Stay once, carry memories forever...</span></h2>
+                        <button class="btn"> 
+                            <a href="/rooms">VIEW ROOMS</a>
+                    </button>
+                    </div>
+                </div> 
+            </div>
+        </section>
+        <% if (user) { %>
+            <p>Welcome <%= user.username %>!</p>
+          <% } %>
+          
+        
+        <section id="amenities">
+            <div class="amen-container">
+                <div class="amen-text">
+                    <h2 class="am">An elegant stay in TechQuest's commercial district</h2>
+                    <p>An elegant stay in Abuja's commercial district</p>
+                    <p>Set on picturesque landscaped gardens, our hotel sits at the heart of Nigeria's Federal Capital Territory and Abuja's commercial district. <br> <p>We're less than three kilometers from Abuja National Mosque and Millennium Park, within 20 minutes of the city center. Enjoy our on-site casino, handicraft market, airline kiosks, 24-hour fitness center, and outdoor pool.</p></p> 
+                </div>
+                <div class="amenities">
+                    <h2 class="am">Our Amenities</h2>
+                    <div></div>
+                    <i class='fas fa-table-tennis' style="color: #1f5137; font-size:20px;"> Tennis</i>
+                    <i class="fa fa-car" style="color: #1f5137; font-size:20px;"> Free parking</i>
+                    <i class='fas fa-bowling-ball' style="color: #1f5137; font-size:20px;"> Bowling</i>
+                    <i class='fas fa-swimmer' style="color: #1f5137; font-size:20px;"> Outdoor pool</i>
+                    <i class='fas fa-dumbbell' style="color: #1f5137; font-size:20px;"> Fitness center</i>
+                </div>
+            </div>
+        </section>
+        <section id="info">
+            <div class="info">
+                <div class="relax">
+                    <h1>Rest, Relax, and Re-energise</h2>
+                    <h3> Experience the very best of Lagos. Located  close to the Atlantic Ocean. Superbly styled  executive rooms and suite offer an excellent standard of comfort.</h5>        
+                </div>
+                <div class="info-container">
+                    <div class="info-cont">
+                        <img class="info-cont-image" src="https://media.istockphoto.com/id/904389204/photo/wifi-wireless-symbol-3d-blue-render-illustration.jpg?b=1&s=170667a&w=0&k=20&c=WePzF1LZc-dGITeILt38oZvr1XbFcuVdJPeKf0bGInc=" />
+                    </div>
+                    <div class="info-cont">
+                        <img class="info-cont-image" src="https://img.freepik.com/premium-vector/parking-car-logo-template-design_20029-1037.jpg?w=2000" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div  class="about-container">
+                <div class="about">
+                    <h1> Experience Dee's Hotel</h1>
+                    <p>The hotel has over 10 superbly styled rooms, comprising executive double rooms and suites spread over two floors. The hotel also boasts state of the art leisure facilities including a gym and indoor swimming pool. Catering to your event needs we offer a banquet hall and mini conference rooms for corporate and personal events. Our range of first class services will make your stay an unforgettable experience.<p>
+                    <button class="btnn"> 
+                            <a href="rooms.html">VIEW ROOMS</a>
+                    </button>
+                </div>
+                <div class="about-container">
+                    <div class="about-cont">
+                        <img class="about-cont-image" src="https://media.architecturaldigest.com/photos/5c6452972a81d22dc23c83f9/3:4/w_1500,h_2000,c_limit/Midnight%20Rambler-TX.jpg" />
+                    </div>
+                    <div class="about-cont">
+                        <img class="about-cont-image" src="https://i.pinimg.com/originals/45/23/7f/45237fe5ada482dcc823bf09bdd95529.jpg" />
+                    </div>
+                </div>
+            </div>
+        </section>
+<%- include('partials/footer') %>
