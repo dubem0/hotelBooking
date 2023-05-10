@@ -49,7 +49,7 @@ const createRoom = async (req, res) => {
 const getAllRooms = async (req, res) => {
     try {
         const rooms = await Room.find();
-        res.render("rooms", {rooms});
+        res.render("rooms", {rooms}, {user: req.user});
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

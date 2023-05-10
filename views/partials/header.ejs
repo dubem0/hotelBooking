@@ -25,15 +25,12 @@
                             <a href="tel.08108981842">0810 898 1842</a>
                         </li>
                         <% if (!user) { %>
-                            <li class="login-signin">
-                                <a href="/login" id="login-btn">Log in</a>
-                            </li>
-                          <% } else { %>
-                            <li><a href="/profile">Profile</a></li>
-                            <li><a href="/logout">Logout</a></li>
-                            <li>Welcome <%= user.username %></li>
+                            <li><a href="/login">Login</a></li>
                           <% } %>
-                        <li class="login-signin">
+                          <% if (user) { %>
+                            <li><a href="/profile"><%= user.username %></a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        <% } %>
                     </ul>
                 </div>
             </div>
